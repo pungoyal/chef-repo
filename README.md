@@ -1,3 +1,14 @@
+Steps
+-----
+boot the docker container (can be slow for the first time)
+
+    JOB=$(docker run -d pungoyal/ssh /usr/sbin/sshd -D)
+    PORT=$(docker port $JOB 22)
+
+bootstrap the node
+
+    knife bootstrap localhost --ssh-user root --ssh-password root --ssh-port 49160 --run-list "recipe[aliases]"
+
 The chef-repo
 ===============
 All installations require a central workspace known as the chef-repo. This is a place where primitive objects--cookbooks, roles, environments, data bags, and chef-repo configuration files--are stored and managed.
