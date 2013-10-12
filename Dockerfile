@@ -13,6 +13,3 @@ RUN /usr/sbin/sshd
 RUN echo "root:root" | chpasswd
 
 EXPOSE 22
-
-# ADD docker /docker
-# CMD ["/bin/bash", "/docker/startup.sh"] 
