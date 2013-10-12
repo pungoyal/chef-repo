@@ -7,7 +7,7 @@ boot the docker container (can be slow for the first time)
 
 bootstrap the node
 
-    knife bootstrap localhost --ssh-user root --ssh-password root --ssh-port 49160 --run-list "recipe[aliases]"
+    knife bootstrap localhost --ssh-user root --ssh-password root --ssh-port $PORT --run-list "recipe[aliases]"
 
 The chef-repo
 ===============
