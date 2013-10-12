@@ -11,10 +11,6 @@ magic_shell_alias 'h' do
 	command 'cd ~'
 end
 
-magic_shell_alias 'sites' do
-	command "cd #{node['apache']['dir']}/sites-enabled"
-end
-
 magic_shell_environment 'EDITOR' do
 	value 'vim'
 end
