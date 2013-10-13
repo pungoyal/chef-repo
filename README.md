@@ -2,7 +2,7 @@ Steps
 -----
 boot the docker container (can be slow for the first time)
 
-    JOB=$(docker run -d pungoyal/ssh /usr/sbin/sshd -D)
+    JOB=$(docker run -d pungoyal/centos /usr/sbin/sshd -D)
     PORT=$(docker port $JOB 22)
 
 bootstrap the node

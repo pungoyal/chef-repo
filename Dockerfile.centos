@@ -3,13 +3,14 @@
 # VERSION               0.0.2
 
 FROM       centos
-MAINTAINER Puneet Goyal "puneet@codeignition.co"
+MAINTAINER Puneet Goyal "pungoyal@gmail.com"
 
-RUN yum install -y openssh-server
-
-# RUN mkdir /var/run/sshd
-# RUN /usr/sbin/sshd
+RUN yum install -y openssh-server openssh-clients
 
 RUN echo "root:root" | chpasswd
 
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
+
 EXPOSE 22
+RUN service sshd start
